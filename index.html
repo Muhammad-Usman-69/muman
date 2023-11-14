@@ -10,7 +10,7 @@
 <body>
     <nav class="flex h-20 bg-blue-500 text-lg relative">
         <img src="images/logo.png" alt="">
-        <ul class="flex space-x-4 justify-center items-center text-white">
+        <ul class="flex space-x-3 justify-center items-center text-white">
             <li>
                 <a href="">Home</a>
             </li>
@@ -22,12 +22,29 @@
             </li>
         </ul>
         <div class="search absolute top-20 w-full h-16 bg-blue-600 flex items-center justify-center">
-            <input type="search" name="search" placeholder="Search" class="h-10 p-6 rounded-l-md">
+            <input type="search" name="search" placeholder="Search" class="h-10 p-6 rounded-l-md hover:outline-none" autocomplete="off">
             <button>
-                <img src="images/search.png" alt="" class="bg-blue-100 h-12 rounded-r-md">
+                <img src="images/search.png" alt="" class="bg-blue-100 h-12 p-2 rounded-r-md">
             </button>
+            <img src="images/cart.png" alt="" class="cart invert h-10 ml-6">
         </div>
-        <button class="text-white mx-8">Log In</button>
+        <button class="text-white top-1/2 translate-y-[-50%] right-4 absolute">Log In</button>
     </nav>
+    <div class="mt-20 mx-4 relative">
+        <div class="absolute bg-white bg-opacity-30 rounded-full text-4xl h-8 top-[40%] left-5 flex left">
+            <span class="translate-y-[-8px]">&larr;</span>
+        </div>
+        <div class="rounded-xl flex overflow-x-scroll banner scroll-smooth">
+            <img class="rounded-xl h-60 w-full" src="images/banner1.png" alt="">
+            <img class="rounded-xl h-60 w-full" src="images/banner2.jpg" alt="">
+            <img class="rounded-xl h-60 w-full" src="images/banner3.jpg" alt="">
+            <img class="rounded-xl h-60 w-full" src="images/banner4.png" alt="">
+        </div>
+        <div class="absolute bg-white bg-opacity-30 rounded-full text-4xl h-8 top-[40%] right-5 flex right">
+            <span class="translate-y-[-8px]">&rarr;</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
