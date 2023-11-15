@@ -1,50 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Muhammad Usan">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>muman - E-commerce Store</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <nav class="flex h-20 bg-blue-500 text-lg relative">
-        <img src="images/logo.png" alt="">
-        <ul class="flex space-x-3 justify-center items-center text-white">
+
+<body class="">
+    <nav class="flex h-[72px] bg-blue-500 text-sm relative">
+        <div class="logo w-[72px] grid place-items-center">
+            <img class="w-[70px] h-14" src="images/logo.png" alt="">
+        </div>
+        <ul class="flex space-x-2 justify-center items-center text-white">
             <li>
-                <a href="">Home</a>
+                <a href="" class="bg-blue-600 p-2 px-3 rounded-full">Home</a>
             </li>
             <li>
-                <a href="">About</a>
+                <a href="" class="bg-blue-600 p-2 px-3 rounded-full">Contact Us</a>
             </li>
             <li>
-                <a href="">Contact Us</a>
+                <a href="" class="bg-blue-600 p-2 px-3 rounded-full">FAQ</a>
             </li>
         </ul>
-        <div class="search absolute top-20 w-full h-16 bg-blue-600 flex items-center justify-center">
-            <input type="search" name="search" placeholder="Search" class="h-10 p-6 rounded-l-md hover:outline-none" autocomplete="off">
+        <div class="search absolute top-[72px] w-full h-14 bg-blue-600 flex items-center justify-center">
+            <input type="search" name="search" placeholder="Search"
+                class="h-6 py-5 px-3 rounded-l-md hover:outline-none w-1/2" autocomplete="off">
             <button>
-                <img src="images/search.png" alt="" class="bg-blue-100 h-12 p-2 rounded-r-md">
+                <img src="images/search.png" alt="" class="bg-blue-100 h-10 p-2 rounded-r-md">
             </button>
-            <img src="images/cart.png" alt="" class="cart invert h-10 ml-6">
+            <button class="w-12 ml-6">
+                <img src="images/cart.png" alt="" class="cart invert h-10">
+            </button>
         </div>
-        <button class="text-white top-1/2 translate-y-[-50%] right-4 absolute">Log In</button>
+        <button class="top-1/2 translate-y-[-50%] right-3 absolute bg-[#f7941c] rounded-full">
+            <img src="images/account.png" alt="" class="w-10">
+        </button>
     </nav>
-    <div class="mt-20 mx-4 relative">
-        <div class="absolute bg-white bg-opacity-30 rounded-full text-4xl h-8 top-[40%] left-5 flex left">
-            <span class="translate-y-[-8px]">&larr;</span>
+    <div class="mt-[72px] mx-4 relative">
+        <div
+            class="absolute bg-white bg-opacity-30 rounded-full text-4xl h-8 top-[50%] left-5 translate-y-[-50%] flex items-center justify-center left">
+            <span>&larr;</span>
         </div>
         <div class="rounded-xl flex overflow-x-scroll banner scroll-smooth">
-            <img class="rounded-xl h-60 w-full" src="images/banner1.png" alt="">
-            <img class="rounded-xl h-60 w-full" src="images/banner2.jpg" alt="">
-            <img class="rounded-xl h-60 w-full" src="images/banner3.jpg" alt="">
-            <img class="rounded-xl h-60 w-full" src="images/banner4.png" alt="">
+            <img class="flex-shrink-0 h-60 w-auto" src="images/banner1.png" alt="">
+            <img class="flex-shrink-0 h-60 w-auto" src="images/banner2.jpg" alt="">
+            <img class="flex-shrink-0 h-60 w-auto" src="images/banner3.jpg" alt="">
+            <img class="flex-shrink-0 h-60 w-auto" src="images/banner4.png" alt="">
         </div>
-        <div class="absolute bg-white bg-opacity-30 rounded-full text-4xl h-8 top-[40%] right-5 flex right">
-            <span class="translate-y-[-8px]">&rarr;</span>
+        <div
+            class="absolute bg-white bg-opacity-30 rounded-full text-4xl h-8 top-[50%] right-5 translate-y-[-50%] flex items-center right">
+            <span>&rarr;</span>
         </div>
     </div>
+    <div class="info mt-4 bg-blue-600 text-white font-bold text-lg p-1 flex justify-center items-center">
+        <img class="h-6" src="images/sale_info.png" alt="">
+        <span class="mx-2">Sale Ending in</span>
+        <span class="hours text-blue-600 bg-white w-9 text-center mx-[2px] h-7 rounded-sm"></span><span
+            class="text-white">:</span>
+        <span class="minutes text-blue-600 bg-white w-9 text-center mx-[2px] h-7 rounded-sm"></span><span
+            class="text-white">:</span>
+        <span class="seconds text-blue-600 bg-white w-9 text-center mx-[2px] h-7 rounded-sm"></span>
+    </div>
+    <div class="popular">
+        <div class="items">
+            <div class="flex justify-between my-2 mx-4">
+                <span class="font-bold text-lg">Hot Selling</span>
+                <a href="" class="font-bold text-blue-800">View All</a>
+            </div>
+
+            <div class="grid grid-cols-2 scroll-smooth p-0 bg-slate-100 w-full">
+
+                <div class="bg-[#e8e8e8] h-72 w-full p-2  border-[grey] border-r-[1px]">
+                    <img class="rounded-md w-full" src="images/hot1.webp" alt="">
+                    <p class="line-clamp-2 leading-5 mx-2 mt-2">Cowin Blue Wholesale: Aviation Active Noise Cancelling
+                        Headphones,
+                        Wired Gaming Earphones, Headsets, Bluetooth Headphones, Wireless</p>
+                    <p class="font-extrabold text-md text-blue-700 mx-2 leading-none">
+                        <span class="text-[12px]">$</span><del>79.99</del>
+                        <span class="w-4"> </span>
+                        <span class="text-[14px]">$</span><span class="text-lg">59.99<span>
+                    </p>
+                </div>
+
+                <div class="sidehot grid grid-rows-3 grid-cols-[h-24] bg-[#e8e8e8] h-72 w-full">
+                    <div class="p-2 flex border-[grey] border-b-[1px]">
+                        <img class="rounded-md h-full" src="images/hot2.webp" alt="">
+                        <div class="hot-detail flex flex-col">
+                            <p class="line-clamp-2 leading-5 mx-2 break-all">Modern, soft, and comfortable office
+                                E-sports club
+                                chair
+                                designed for ergonomic gaming on computers.</p>
+                            <p class="font-extrabold text-[14px] text-blue-700 mx-2 leading-none mt-2">
+                                <span class="text-[10px]">$</span><del>119.99</del>
+                                <br>
+                                <span class="text-[12px]">$</span><span class="text-[16px]">99.99<span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-2 flex border-[grey] border-b-[1px]">
+                        <img class="rounded-md h-full" src="images/hot3.webp" alt="">
+                        <div class="hot-detail flex flex-col">
+                            <p class="line-clamp-2 leading-5 mx-2 break-all">New and stylish Auricularess Bluetooth
+                                earbuds,
+                                custom
+                                waterproof design, perfect for immersive gaming experiences.</p>
+                            <p class="font-extrabold text-[14px] text-blue-700 mx-2 leading-none mt-2">
+                                <span class="text-[10px]">$</span><del>29.99</del>
+                                <br>
+                                <span class="text-[12px]">$</span><span class="text-[16px]">24.99<span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-2 flex">
+                        <img class="rounded-md h-full" src="images/hot4.webp" alt="">
+                        <div class="hot-detail flex flex-col">
+                            <p class="line-clamp-2 leading-5 mx-2 break-all">High-quality 24" - 27" computer monitor
+                                with
+                                a 2K/4K LCD screen, offering crisp visuals and optimal gaming performance.</p>
+                            <p class="font-extrabold text-[14px] text-blue-700 mx-2 leading-none mt-2">
+                                <span class="text-[10px]">$</span><del>79.99</del>
+                                <br>
+                                <span class="text-[12px]">$</span><span class="text-[16px]">59.99<span>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="h-[100vh]"></div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
