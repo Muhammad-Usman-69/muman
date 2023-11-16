@@ -20,7 +20,7 @@ leftButton.addEventListener("click", () => {
     bannerContainer.scrollLeft = currentPosition;
 });
 
-/* window.addEventListener("load", () => {
+window.addEventListener("load", () => {
     setInterval(() => {
         currentPosition += scrollAmount;
         bannerContainer.scrollLeft = currentPosition;
@@ -29,7 +29,7 @@ leftButton.addEventListener("click", () => {
             currentPosition = 0;
         }
     }, 3000);
-}) */
+})
 
 function updateCountdown() {
     let curDate = Date.now();
