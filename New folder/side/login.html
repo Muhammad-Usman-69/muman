@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="Muhammad Usman">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-image: linear-gradient(to right bottom, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+            margin: 0;
+            color: white;
+            background-size: 200% 200%;
+            animation: smooth 4s infinite linear;
+        }
+
+        @keyframes smooth {
+            0% {background-position: 0% 0;}
+            50% {background-position: 100% 100%;}
+            100% {background-position: 0 0%;}
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form {
+            height: 320px;
+            /* height: 233.7px; */
+            background-image: linear-gradient(rgba(65, 65, 65, 0.25), rgba(68, 66, 66, 0.25));
+            box-shadow: 0 0 20px rgba(65, 65, 65, 0.3);
+            border-radius: 5px;
+            width: 300px;
+            margin: 0 48px;
+        }
+
+        .log {
+            text-align: center;
+            margin-top: 42px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        form {
+            margin: 16px 0;
+            position: relative;
+        }
+
+        input {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        ::placeholder {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .email_after {
+            margin: 14px;
+            position: relative;
+        }
+
+        .email_after::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 272px;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.9);
+            transform: scale(0);
+            transition: 1s ease;
+        }
+
+        .email_after:hover::after {
+            transform: scale(1);
+        }
+
+        #email {
+            background-color: transparent;
+            border: none;
+            width: 232px;
+            padding: 16px 20px;
+            border: 0px;
+            transition: 0.4s ease;
+        }
+
+        #email:focus {
+            outline: none;
+            border: none;
+        }
+
+        .pass_after {
+            position: relative;
+            margin: 14px;
+        }
+
+        .pass_after::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            width: 100%;
+            height: 1px;
+            transform: scale(0);
+            transition: 1s ease-in-out;
+        }
+
+        .pass_after:hover::after {
+            transform: scale(1);
+        }
+
+        #pass {
+            background-color: transparent;
+            border: none;
+            width: 232px;
+            padding: 16px 20px;
+            transition: 1s;
+        }
+
+        #pass:focus {
+            outline: none;
+            border: none;
+        }
+
+        .sign {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            text-align: center;
+            margin: 12px;
+            position: relative;
+        }
+
+        #sign {
+            margin-right: 10px;
+        }
+
+        #sign_link {
+            text-decoration: none;
+            color: white;
+        }
+
+        #sign_link::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            right: 32px;
+            width: 47px;
+            height: 1px;
+            transform: scale(0);
+            background-color: rgba(255, 255, 255, 0.9);
+            transition: 1s;
+        }
+
+        #sign_link:hover::after {
+            transform: scale(1);
+        }
+
+        #log_in {
+            font-family: 'Montserrat', sans-serif;
+            position: absolute;
+            bottom: -50px;
+            right: 26px;
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            border-radius: 5px;
+            background-color: transparent;
+            padding: 6px;
+            transition: 0.3s linear;
+        }
+
+        #log_in:hover {
+            box-shadow: 0 0 6px white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form">
+            <h1 class="log">Login Here</h1>
+            <form action="side/404_Page.html">
+                <div class="email_after"><input type="email" name="email" id="email" placeholder="Email"
+                        autocomplete="off" /></div>
+                <div class="pass_after"><input type="password" name="password" id="pass" placeholder="Password"
+                        autocomplete="off" /></div>
+                <div class="sign">
+                    <span id="sign">Already have an account?</span>
+                    <a href="side/404_Page.html" id="sign_link">Sign in</a>
+                </div>
+                <input type="submit" value="Log In" id="log_in" />
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
