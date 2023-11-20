@@ -3,7 +3,7 @@ module.exports = {
   content: [
     "index.html",
     "script.js",
-    "product/1.html",
+    "product/*",
     "product/product.js"
   ],
   theme: {

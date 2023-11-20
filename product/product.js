@@ -49,3 +49,10 @@ minus.addEventListener("click", () => {
         quantity.innerHTML--;
     }
 });
+
+const originalText = "Cowin Blue Wholesale Aviation Active Noise Cancelling Headphones Wired Gaming Earphones Headsets Bluetooth Headphones Wireless";
+const characters = originalText.split(' ');
+const hyphenatedText = characters.join('-');
+
+// Get the element with id "output" and set its innerHTML to the hyphenated text
+console.log(hyphenatedText);
