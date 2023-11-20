@@ -50,7 +50,7 @@ minus.addEventListener("click", () => {
     }
 });
 
-const originalText = "Cowin Blue Wholesale Aviation Active Noise Cancelling Headphones Wired Gaming Earphones Headsets Bluetooth Headphones Wireless";
+const originalText = `High-quality 24-27 computer monitor with a 2K/4K LCD screen, offering crisp visuals and optimal gaming performance`;
 const characters = originalText.split(' ');
 const hyphenatedText = characters.join('-');
 
