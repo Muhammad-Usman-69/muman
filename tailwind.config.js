@@ -2,9 +2,8 @@
 module.exports = {
   content: [
     "index.html",
-    "script.js",
     "product/*",
-    "product/product.js"
+    "side/*"
   ],
   theme: {
     extend: {},
