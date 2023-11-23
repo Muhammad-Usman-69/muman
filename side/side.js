@@ -13,3 +13,20 @@ inputs.forEach((input, index) => {
         }
     })
 })
+
+let quantity = document.querySelector(".quantity-number");
+let plus = document.querySelector(".plus");
+let minus = document.querySelector(".minus");
+
+plus.addEventListener("click", () => {
+    quantity.innerHTML++;
+})
+
+minus.addEventListener("click", () => {
+    if (quantity.innerHTML == 1) {
+        minus.disabled = true;
+    } else {
+        minus.disabled = false;
+        quantity.innerHTML--;
+    }
+});
