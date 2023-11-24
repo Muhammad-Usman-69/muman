@@ -39,6 +39,9 @@ let minus = document.querySelector(".minus");
 
 plus.addEventListener("click", () => {
     quantity.innerHTML++;
+    if (quantity.innerHTML > 1) {
+        minus.disabled = false;
+    }
 })
 
 minus.addEventListener("click", () => {
