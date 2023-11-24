@@ -21,6 +21,7 @@ function scrollRight() {
 rightButton.addEventListener("click",scrollRight);
 
 leftButton.addEventListener("click", () => {
+    clickTime = Date.now();
     currentPosition -= scrollAmount;
     bannerContainer.scrollLeft = currentPosition;
 });
@@ -53,9 +54,10 @@ minus.addEventListener("click", () => {
     }
 });
 
-const originalText = `High-quality 24-27 computer monitor with a 2K/4K LCD screen, offering crisp visuals and optimal gaming performance`;
-const characters = originalText.split(' ');
-const hyphenatedText = characters.join('-');
+const originalText = `EASE-EM200-Wireless-Mouse`;
+let cleanText = originalText.replace(/-/g, " ");
+const characters = cleanText.split('-');
+const hyphenatedText = characters.join(' ');
 
 // Get the element with id "output" and set its innerHTML to the hyphenated text
 console.log(hyphenatedText);

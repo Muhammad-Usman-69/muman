@@ -21,16 +21,17 @@ function scrollRight() {
 rightButton.addEventListener("click",scrollRight);
 
 leftButton.addEventListener("click", () => {
+    clickTime = Date.now();
     currentPosition -= scrollAmount;
     bannerContainer.scrollLeft = currentPosition;
 });
 
 window.addEventListener('load', () => {
     setInterval(() => {
-        if (Date.now() - clickTime >= 1) {
+        if (Date.now() - clickTime >= 4000) {
             scrollRight();
         }
-    }, 4000);
+    }, 1);
 });
 
 function updateCountdown() {

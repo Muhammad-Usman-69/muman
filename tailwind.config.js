@@ -3,7 +3,8 @@ module.exports = {
   content: [
     "index.html",
     "product/*",
-    "side/*"
+    "side/*",
+    "categories/*"
   ],
   theme: {
     extend: {},
