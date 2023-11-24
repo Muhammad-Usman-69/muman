@@ -54,10 +54,17 @@ minus.addEventListener("click", () => {
     }
 });
 
-const originalText = `EASE-EM200-Wireless-Mouse`;
+let originalText = `MSanDisk-64GB-Ultra-Flair-USB-3.0-Flash-Drive`;
 let cleanText = originalText.replace(/-/g, " ");
-const characters = cleanText.split('-');
-const hyphenatedText = characters.join(' ');
+let characters = cleanText.split('-');
+let hyphenatedText = characters.join(' ');
+
+// Get the element with id "output" and set its innerHTML to the hyphenated text
+console.log(hyphenatedText);
+
+originalText = `MFi Certified 128GB Photo Stick for iPhone Flash Drive,USB Memory Stick Thumb Drives High Speed USB Stick External Storage Compatible for iPhoneiPadAndroidPC`;
+characters = originalText.split(' ');
+hyphenatedText = characters.join('-');
 
 // Get the element with id "output" and set its innerHTML to the hyphenated text
 console.log(hyphenatedText);
