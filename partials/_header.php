@@ -4,13 +4,13 @@
     </a>
     <ul class="flex space-x-2 justify-center items-center text-white">
         <li>
-            <a href="side/about.html" class="bg-blue-600 p-2 px-3 rounded-full hover:bg-blue-700">About</a>
+            <a href="info.php?t=about" class="bg-blue-600 p-2 px-3 rounded-full hover:bg-blue-700">About</a>
         </li>
         <li>
-            <a href="side/contact.html" class="bg-blue-600 p-2 px-3 rounded-full hover:bg-blue-700">Contact Us</a>
+            <a href="info.php?t=contact" class="bg-blue-600 p-2 px-3 rounded-full hover:bg-blue-700">Contact Us</a>
         </li>
         <li>
-            <a href="side/faq.html" class="bg-blue-600 p-2 px-3 rounded-full hover:bg-blue-700">FAQ</a>
+            <a href="info.php?t=faq" class="bg-blue-600 p-2 px-3 rounded-full hover:bg-blue-700">FAQ</a>
         </li>
     </ul>
     <form action="search.php" method="get" class="search absolute top-[72px] w-full h-14 bg-blue-600 flex items-center justify-center md:static md:w-3/5 md:h-[72px] md:bg-transparent">

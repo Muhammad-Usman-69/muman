@@ -1,7 +1,7 @@
 <?php include("partials/_dbconnect.php"); ?>
 <?php
-    if (isset($_GET["category"]) && $_GET["category"] != "") {
-        $cat_name = $_GET["category"];
+    if (isset($_GET["c"]) && $_GET["c"] != "") {
+        $cat_name = $_GET["c"];
         $sql = "SELECT * FROM `categories` WHERE `category_name` = '$cat_name'";
         $result = mysqli_query($conn, $sql);
         $num = mysqli_num_rows($result);

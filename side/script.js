@@ -1,40 +1,38 @@
-const bannerContainer = document.querySelector(".banner");
-const bannerImg = document.querySelectorAll(".banner img");
+if (document.querySelector(".banner")) {
+    const bannerContainer = document.querySelector(".banner");
+    const bannerImg = document.querySelectorAll(".banner img");
 
-const scrollAmount = bannerContainer.offsetWidth;
-let currentPosition = 0;
-let clickTime = Date.now();
+    const scrollAmount = bannerContainer.offsetWidth;
+    let currentPosition = 0;
+    let clickTime = Date.now();
 
-function scrollRight() {
-    clickTime = Date.now();
-    currentPosition += scrollAmount;
-    bannerContainer.scrollLeft = currentPosition;
+    function scrollImgRight() {
+        clickTime = Date.now();
+        currentPosition += scrollAmount;
+        bannerContainer.scrollLeft = currentPosition;
 
-    if (currentPosition == (scrollAmount * bannerImg.length)) {
-        bannerContainer.scrollLeft = 0;
-        currentPosition = 0;
+        if (currentPosition == (scrollAmount * bannerImg.length)) {
+            bannerContainer.scrollLeft = 0;
+            currentPosition = 0;
+        }
     }
-};
 
-function scrollLeft() {
-    clickTime = Date.now();
-    currentPosition -= scrollAmount;
-    bannerContainer.scrollLeft = currentPosition;
-};
+    function scrollImgLeft() {
+        clickTime = Date.now();
+        currentPosition -= scrollAmount;
+        bannerContainer.scrollLeft = currentPosition;
+    }
 
-window.addEventListener('load', () => {
     setInterval(() => {
         if (Date.now() - clickTime >= 4000) {
-            scrollRight();
+            scrollImgRight();
         }
     }, 1);
-});
+}
 
-window.addEventListener("load", () => {
-    if (document.querySelector(".sale_info")) {
-        setInterval(updateCountdown, 1000);
-    }
-})
+if (document.querySelector(".sale_info")) {
+    setInterval(updateCountdown, 1000);
+}
 
 function updateCountdown() {
     let curDate = Date.now();
@@ -76,4 +74,22 @@ if (document.querySelector(".quantity-number")) {
             quantity.innerHTML--;
         }
     });
+}
+
+if (document.querySelector(".contact")) {
+    let inputs = document.querySelectorAll(".input");
+    let labels = document.querySelectorAll(".label")
+
+    inputs.forEach((input, index) => {
+        let label = labels[index];
+        input.addEventListener("input", () => {
+            if (input.value !== "") {
+                label.classList.add("filled");
+                input.classList.add("border-blue-500");
+            } else {
+                label.classList.remove("filled");
+                input.classList.remove("border-blue-500");
+            }
+        })
+    })
 }

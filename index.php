@@ -19,7 +19,7 @@
     <div class="mt-[72px] mx-4 md:mt-4">
         <div class="relative lg:w-[1000px] lg:-translate-x-1/2 lg:left-1/2">
             <button
-                class="group absolute bg-[grey] active:bg-opacity-30 bg-opacity-0 w-20 h-full top-1/2 left-0 -translate-y-1/2 grid place-items-center hover:bg-opacity-20 transition-all duration-300" onclick="scrollLeft()">
+                class="group absolute bg-[grey] active:bg-opacity-30 bg-opacity-0 w-20 h-full top-1/2 left-0 -translate-y-1/2 grid place-items-center hover:bg-opacity-20 transition-all duration-300" onclick="scrollImgLeft()">
                 <img src="images/main/left.png" class="hidden group-hover:block" alt="Scroll Icon">
             </button>
             <div class="rounded-t-xl flex overflow-x-scroll banner scroll-smooth hide-scrollbar">
@@ -29,7 +29,7 @@
                 <img class="flex-shrink-0 h-full" src="images/main/banner4.jpg" alt="">
             </div>
             <button
-                class="group absolute bg-[grey] active:bg-opacity-30 bg-opacity-0 w-20 h-full top-1/2 right-0 -translate-y-1/2 grid place-items-center hover:bg-opacity-20 transition-all duration-300" onclick="scrollRight()">
+                class="group absolute bg-[grey] active:bg-opacity-30 bg-opacity-0 w-20 h-full top-1/2 right-0 -translate-y-1/2 grid place-items-center hover:bg-opacity-20 transition-all duration-300" onclick="scrollImgRight()">
                 <img src="images/main/right.png" class="hidden group-hover:block" alt="Scroll Icon">
             </button>
         </div>
@@ -47,7 +47,7 @@
         <div class="items">
             <div class="flex justify-between py-2 px-4 bg-white">
                 <span class="font-bold text-lg">Hot Selling</span>
-                <a href="products.php" class="font-bold text-blue-800">View All</a>
+                <a href="list.php" class="font-bold text-blue-800">View All</a>
             </div>
             <div class="grid grid-cols-2 scroll-smooth p-0 bg-slate-100 w-full md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 border-[grey] border-t-[1px] md:border-none">
                 <?php 
@@ -115,7 +115,7 @@
                     while($row = mysqli_fetch_assoc($result)) {
                         $cat_name = $row["category_name"];
                         $cat_id = $row["category_id"];
-                        echo '<a href="categories.php?category='.$cat_name.'"
+                        echo '<a href="category.php?c='.$cat_name.'"
                                 class="bg-[#e8e8e8] grid grid-cols-1 place-items-center  border-[grey] border-b border-r md:border-b-0">
 
                                 <img class="h-20" src="images/main/'.$cat_name.'.png" alt="">

@@ -6,26 +6,20 @@
 ?>
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Muhammad Usman">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $num ?> items found</title>
+    <title>muman - Search All Products</title>
     <link rel="shortcut icon" href="images/main/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="side/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
 <body class="bg-[#f5f4f4] hide-scrollbar flex min-h-[100vh] flex-col">
-    
     <?php include("partials/_header.php"); ?>
-
     <div class="mt-14 mx-4 mb-4 rounded-md md:mt-1">
-        <p class="mx-2 py-4 text-orange-600"><?php echo $num; ?></span> items found</p>
-
+        <p class="mx-2 py-4"><span class="text-orange-600">"<?php echo $num; ?>"</span> items found</p>
         <div class="grid gap-4 sm:grid-cols-2 sm:gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-
             <?php
                 if ($num != 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
@@ -52,8 +46,6 @@
 
         </div>
     </div>
-
     <?php include("partials/_footer.php"); ?>
-
     </body>
 </html>

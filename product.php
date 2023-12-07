@@ -52,8 +52,7 @@
                 class="relative xl:w-[450px] 2xl:w-[520px] xl:left-1/2 xl:-translate-x-1/2 2xl:top-1/2 2xl:-translate-y-1/2">
                 <div class="img-container sm:h-full md:h-auto md:p-6">
                     <button
-                        class="group absolute bg-[grey] active:bg-opacity-30 bg-opacity-0 w-20 h-full top-1/2 left-0 -translate-y-1/2 grid place-items-center hover:bg-opacity-20 transition-all duration-300 md:h-20 md:left-5"
-                        onclick="scrollLeft()">
+                        class="group absolute bg-[grey] active:bg-opacity-30 bg-opacity-0 w-20 h-full top-1/2 left-0 -translate-y-1/2 grid place-items-center hover:bg-opacity-20 transition-all duration-300 md:h-20 md:left-5" onclick="scrollImgLeft()">
                         <img src="../images/main/left.png" class="hidden group-hover:block" alt="Scroll Icon">
                     </button>
                     <div class="flex overflow-x-scroll banner scroll-smooth hide-scrollbar sm:h-full md:h-auto">
@@ -65,7 +64,7 @@
                     </div>
                     <button
                         class="group absolute bg-[grey] active:bg-opacity-30 bg-opacity-0 w-20 h-full top-1/2 right-0 -translate-y-1/2 grid place-items-center hover:bg-opacity-20 transition-all duration-300 md:h-20 md:right-5"
-                        onclick="scrollRight()">
+                        onclick="scrollImgRight()">
                         <img src="../images/main/right.png" class="hidden group-hover:block" alt="Scroll Icon">
                     </button>
                 </div>
