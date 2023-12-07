@@ -1,5 +1,3 @@
-const leftButton = document.querySelector(".left");
-const rightButton = document.querySelector(".right");
 const bannerContainer = document.querySelector(".banner");
 const bannerImg = document.querySelectorAll(".banner img");
 
@@ -11,20 +9,18 @@ function scrollRight() {
     clickTime = Date.now();
     currentPosition += scrollAmount;
     bannerContainer.scrollLeft = currentPosition;
-    
+
     if (currentPosition == (scrollAmount * bannerImg.length)) {
         bannerContainer.scrollLeft = 0;
         currentPosition = 0;
     }
 };
 
-rightButton.addEventListener("click",scrollRight);
-
-leftButton.addEventListener("click", () => {
+function scrollLeft() {
     clickTime = Date.now();
     currentPosition -= scrollAmount;
     bannerContainer.scrollLeft = currentPosition;
-});
+};
 
 window.addEventListener('load', () => {
     setInterval(() => {
@@ -33,6 +29,12 @@ window.addEventListener('load', () => {
         }
     }, 1);
 });
+
+window.addEventListener("load", () => {
+    if (document.querySelector(".sale_info")) {
+        setInterval(updateCountdown, 1000);
+    }
+})
 
 function updateCountdown() {
     let curDate = Date.now();
@@ -60,4 +62,18 @@ function updateCountdown() {
     document.querySelector(".seconds").innerHTML = paddedSeconds;
 }
 
-setInterval(updateCountdown, 1000);
+if (document.querySelector(".quantity-number")) {
+    let quantity = document.querySelector(".quantity-number");
+    let plus = document.querySelector(".plus");
+    let minus = document.querySelector(".minus");
+
+    plus.addEventListener("click", () => {
+        quantity.innerHTML++;
+    });
+
+    minus.addEventListener("click", () => {
+        if (quantity.innerHTML > 1) {
+            quantity.innerHTML--;
+        }
+    });
+}
