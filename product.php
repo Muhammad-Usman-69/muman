@@ -1,6 +1,13 @@
-<?php $prod_msin = $_GET["msin"] ?>
 <?php include("partials/_dbconnect.php") ?>
-<?php 
+<?php
+    if (isset($_GET["msin"]) && $_GET["msin"] != "") {
+        $prod_msin = $_GET["msin"];
+    } else {
+        header("location:/?product not specified");
+        exit();
+    }
+?>
+<?php
     $sql = "SELECT * FROM `products` WHERE `product_msin` = '$prod_msin'";
     $result = mysqli_query($conn, $sql);
     $num = mysqli_num_rows($result);
@@ -16,6 +23,9 @@
             $prod_new_price = $row["product_new_price"];
             $prod_del_price = $row["product_delivery_charges"];
         }
+    } else {
+        header("location:/?unknown product");
+        exit();
     }
 ?>
 <!DOCTYPE html>
@@ -25,41 +35,51 @@
     <meta charset="UTF-8">
     <meta name="author" content="Muhammad Usman">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $prod_name; ?></title>
+    <title>
+        <?php echo $prod_name; ?>
+    </title>
     <link rel="shortcut icon" href="images/main/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="side/style.css">
 </head>
 
 <body class="bg-[#e8e8e8] hide-scrollbar">
-    
+
     <?php include("partials/_header.php"); ?>
 
     <div class="mt-14 sm:grid grid-cols-2 md:m-2 md:grid-cols-3 md:grid-rows-2">
         <div class="md:row-span-2 md:bg-blue-500">
-            <div class="relative xl:w-[450px] 2xl:w-[520px] xl:left-1/2 xl:-translate-x-1/2 2xl:top-1/2 2xl:-translate-y-1/2">
+            <div
+                class="relative xl:w-[450px] 2xl:w-[520px] xl:left-1/2 xl:-translate-x-1/2 2xl:top-1/2 2xl:-translate-y-1/2">
                 <div class="img-container sm:h-full md:h-auto md:p-6">
                     <button
-                        class="group absolute bg-[grey] active:bg-opacity-30 bg-opacity-0 w-20 h-full top-1/2 left-0 -translate-y-1/2 grid place-items-center hover:bg-opacity-20 transition-all duration-300 md:h-20 md:left-5" onclick="scrollLeft()">
+                        class="group absolute bg-[grey] active:bg-opacity-30 bg-opacity-0 w-20 h-full top-1/2 left-0 -translate-y-1/2 grid place-items-center hover:bg-opacity-20 transition-all duration-300 md:h-20 md:left-5"
+                        onclick="scrollLeft()">
                         <img src="../images/main/left.png" class="hidden group-hover:block" alt="Scroll Icon">
                     </button>
                     <div class="flex overflow-x-scroll banner scroll-smooth hide-scrollbar sm:h-full md:h-auto">
                         <?php
-                            for ($i = 1 ; $i <= $prod_image ; $i++) {
-                                echo '<img class="flex-shrink-0 h-full w-full sm:h-full" src="../images/'.$prod_name.'/prod'.$i.'.jpg" alt="">';
-                            }
+                        for ($i = 1; $i <= $prod_image; $i++) {
+                            echo '<img class="flex-shrink-0 h-full w-full sm:h-full" src="../images/' . $prod_name . '/prod' . $i . '.jpg" alt="">';
+                        }
                         ?>
                     </div>
                     <button
-                        class="group absolute bg-[grey] active:bg-opacity-30 bg-opacity-0 w-20 h-full top-1/2 right-0 -translate-y-1/2 grid place-items-center hover:bg-opacity-20 transition-all duration-300 md:h-20 md:right-5" onclick="scrollRight()">
+                        class="group absolute bg-[grey] active:bg-opacity-30 bg-opacity-0 w-20 h-full top-1/2 right-0 -translate-y-1/2 grid place-items-center hover:bg-opacity-20 transition-all duration-300 md:h-20 md:right-5"
+                        onclick="scrollRight()">
                         <img src="../images/main/right.png" class="hidden group-hover:block" alt="Scroll Icon">
                     </button>
                 </div>
             </div>
         </div>
         <div class="intro bg-blue-500 p-6 border-white border-b pb-2 sm:h-full md:border-none md:pl-0">
-            <p class="text-[#f5f4f4]"><?php echo $prod_name; ?></p>
-            <p class="text-base block font-extrabold text-[#f5f4f4]">$<span class="text-2xl"><?php echo $prod_new_price; ?><span></p>
-            <p class="text-sm text-[#f5f4f4]">$<del class="text-base"><?php echo $prod_old_price; ?></del></p>
+            <p class="text-[#f5f4f4]">
+                <?php echo $prod_name; ?>
+            </p>
+            <p class="text-base block font-extrabold text-[#f5f4f4]">$<span class="text-2xl">
+                    <?php echo $prod_new_price; ?><span></p>
+            <p class="text-sm text-[#f5f4f4]">$<del class="text-base">
+                    <?php echo $prod_old_price; ?>
+                </del></p>
             <div class="flex items-center">
                 <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor" viewBox="0 0 22 20">
@@ -102,34 +122,46 @@
                 <button class="bg-red-600 text-white active:bg-red-700 p-4 font-semibold">Add to Cart</button>
             </div>
         </div>
-        <div class="details text-white bg-blue-500 p-6 border-white border-b grid md:row-start-2 md:col-start-2 md:py-0 md:pl-0 md:border-b-0">
+        <div
+            class="details text-white bg-blue-500 p-6 border-white border-b grid md:row-start-2 md:col-start-2 md:py-0 md:pl-0 md:border-b-0">
             <p class="font-bold text-2xl">Product Details</p>
             <table class="grid grid-cols-1 py-5">
                 <tbody>
                     <tr class="grid grid-cols-2 text-center">
                         <th class="bg-blue-700 text-white border-white border-x border-y p-2">Brand:</th>
-                        <td class="bg-blue-600 text-white border-white border-x border-y p-2"><?php echo $prod_brand; ?></td>
+                        <td class="bg-blue-600 text-white border-white border-x border-y p-2">
+                            <?php echo $prod_brand; ?>
+                        </td>
                     </tr>
                     <tr class="grid grid-cols-2 text-center">
                         <th class="bg-blue-700 text-white border-white border-x border-y p-2">Dimensions:</th>
-                        <td class="bg-blue-600 text-white border-white border-x border-y p-2"><?php echo $prod_dimension; ?> cm</td>
+                        <td class="bg-blue-600 text-white border-white border-x border-y p-2">
+                            <?php echo $prod_dimension; ?> cm
+                        </td>
                     </tr>
                     <tr class="grid grid-cols-2 text-center">
                         <th class="bg-blue-700 text-white border-white border-x border-y p-2">MSIN:</th>
-                        <td class="bg-blue-600 text-white border-white border-x border-y p-2"><?php echo $prod_msin; ?></td>
+                        <td class="bg-blue-600 text-white border-white border-x border-y p-2">
+                            <?php echo $prod_msin; ?>
+                        </td>
                     </tr>
                     <tr class="grid grid-cols-2 text-center">
                         <th class="bg-blue-700 text-white border-white border-x border-y p-2">Color:</th>
-                        <td class="bg-blue-600 text-white border-white border-x border-y p-2"><?php echo $prod_color; ?></td>
+                        <td class="bg-blue-600 text-white border-white border-x border-y p-2">
+                            <?php echo $prod_color; ?>
+                        </td>
                     </tr>
                     <tr class="grid grid-cols-2 text-center">
                         <th class="bg-blue-700 text-white border-white border-x border-y p-2">Weight:</th>
-                        <td class="bg-blue-600 text-white border-white border-x border-y p-2"><?php echo $prod_weight; ?> Kg</td>
+                        <td class="bg-blue-600 text-white border-white border-x border-y p-2">
+                            <?php echo $prod_weight; ?> Kg
+                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
-        <div class="shipping text-white bg-blue-500 p-6 border-white border-b sm:border-l md:row-start-1 md:row-end-3 md:col-start-3 md:border-b-0">
+        <div
+            class="shipping text-white bg-blue-500 p-6 border-white border-b sm:border-l md:row-start-1 md:row-end-3 md:col-start-3 md:border-b-0">
             <p class="font-bold text-2xl">Shipping</p>
             <table class="grid grid-cols-1 py-5">
                 <tbody>
@@ -141,7 +173,9 @@
                                 <li><i class="fa fa-map-marker pr-2 text-base"></i>Sindh, Karachi - Gulshan-e-Iqbal,
                                     Block
                                     15</li>
-                                <li class="pt-3"><span class="font-bold">$<?php echo $prod_del_price; ?> -</span> Standerd Delivery, 20 May - 24 May </li>
+                                <li class="pt-3"><span class="font-bold">$
+                                        <?php echo $prod_del_price; ?> -
+                                    </span> Standerd Delivery, 20 May - 24 May </li>
                                 <li class="opacity-70">Enjoy free shipping promotion with minimum spend of $129.99 </li>
                             </ul>
                         </td>
