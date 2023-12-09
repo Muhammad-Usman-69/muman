@@ -288,7 +288,7 @@
 
     <?php include("partials/_footer.php"); ?>
 
-    <script src="side/script.js"></script>
+    <?php include("partials/_script.php") ?>
 </body>
 
 </html>

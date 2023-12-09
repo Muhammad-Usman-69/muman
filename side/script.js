@@ -34,6 +34,11 @@ if (document.querySelector(".sale_info")) {
     setInterval(updateCountdown, 1000);
 }
 
+user = document.querySelector(".user");
+function showUser() {
+    user.classList.toggle("opacity-0");
+}
+
 function updateCountdown() {
     let curDate = Date.now();
     const desDate = new Date("2030/1/1");
@@ -76,9 +81,9 @@ if (document.querySelector(".quantity-number")) {
     });
 }
 
-if (document.querySelector(".contact")) {
+if (document.querySelector(".form")) {
     let inputs = document.querySelectorAll(".input");
-    let labels = document.querySelectorAll(".label")
+    let labels = document.querySelectorAll(".label");
 
     inputs.forEach((input, index) => {
         let label = labels[index];

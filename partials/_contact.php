@@ -1,4 +1,4 @@
-<div class="mt-[72px] flex flex-col self-center mb-4 md:mt-4 w-[calc(100vw_-_36px)] sm:p-8 bg-white rounded-md p-4 space-y-4 contact">
+<div class="mt-[72px] flex flex-col self-center mb-4 md:mt-4 w-[calc(100vw_-_36px)] sm:p-8 bg-white rounded-md p-4 space-y-4 form">
     <h2 class="text-3xl font-extrabold text-blue-600">Contact Us</h2>
     <h3 class="text-xl font-bold text-blue-600">We're here to help! Our Customer Service team is at your service.</h3>
     <form action="" class="space-y-6 pt-4 h-fit">

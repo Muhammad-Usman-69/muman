@@ -13,9 +13,9 @@
     <title>muman - Search All Products</title>
     <link rel="shortcut icon" href="images/main/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="side/style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    
 </head>
-<body class="bg-[#f5f4f4] hide-scrollbar flex min-h-[100vh] flex-col">
+<body class="bg-[#f5f4f4] hide-scrollbar flex flex-col">
     <?php include("partials/_header.php"); ?>
     <div class="mt-14 mx-4 mb-4 rounded-md md:mt-1">
         <p class="mx-2 py-4"><span class="text-orange-600">"<?php echo $num; ?>"</span> items found</p>

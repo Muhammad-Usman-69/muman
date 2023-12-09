@@ -6,12 +6,11 @@
     <meta name="author" content="Muhammad Usman">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>muman - E-commerce Store</title>
-    <link rel="stylesheet" href="side/style.css">
     <link rel="shortcut icon" href="images/main/favicon.ico" type="image/x-icon">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="side/style.css">
 </head>
 
-<body class="bg-[#f5f4f4] hide-scrollbar">
+<body class="bg-[#f5f4f4] hide-scrollbar ">
 
     <?php include("partials/_header.php"); ?>
     <?php include("partials/_dbconnect.php"); ?>
@@ -34,14 +33,14 @@
             </button>
         </div>
     </div>
-    <div class="sale_info mt-4 bg-blue-600 text-white font-bold text-lg p-1 flex justify-center items-center">
-        <img class="h-6" src="images/main/sale_info.png" alt="">
+    <div class="sale_info w-[100%] mt-4 bg-blue-600 text-white font-bold text-lg p-1 flex items-center justify-center">
+        <img width="24px" src="images/main/sale_info.png" alt="">
         <span class="mx-2">Sale Ending in</span>
-        <span class="hours text-blue-600 bg-white w-9 text-center mx-[2px] h-7 rounded-sm"></span><span
-            class="text-white">:</span>
-        <span class="minutes text-blue-600 bg-white w-9 text-center mx-[2px] h-7 rounded-sm"></span><span
-            class="text-white">:</span>
-        <span class="seconds text-blue-600 bg-white w-9 text-center mx-[2px] h-7 rounded-sm"></span>
+        <span class="hours text-blue-600 bg-white text-center mx-[2px] px-1.5 rounded-sm"></span>
+        <span class="text-white">:</span>
+        <span class="minutes text-blue-600 bg-white text-center mx-[2px] px-1.5 rounded-sm"></span>
+        <span class="text-white">:</span>
+        <span class="seconds text-blue-600 bg-white text-center mx-[2px] px-1.5 rounded-sm"></span>
     </div>
     <div class="popular">
         <div class="items">
@@ -129,11 +128,8 @@
     <div class="flex justify-between py-2 px-4 bg-white">
         <span class="font-bold text-lg">Connect</span>
     </div>
-
     <?php include("partials/_footer.php") ?>
-    
-    <script src="side/script.js"></script>
-
+    <?php include("partials/_script.php") ?>
 </body>
 
 </html>
