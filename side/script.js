@@ -36,7 +36,7 @@ if (document.querySelector(".sale_info")) {
 
 user = document.querySelector(".user");
 function showUser() {
-    user.classList.toggle("opacity-0");
+    user.classList.toggle("hidden");
 }
 
 function updateCountdown() {

@@ -1,4 +1,4 @@
-<div id="sign-modal" tabindex="-1" aria-hidden="true"
+<div id="sign-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
     class="hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
     <div class="relative p-4 w-full max-w-md max-h-full">
         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 border border-white">
@@ -22,7 +22,7 @@
                     <div>
                         <label for="s-name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
                             name</label>
-                        <input type="text" autocomplete="off" id="s-name" name="s-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                        <input type="text" minlength="5" autocomplete="off" id="s-name" name="s-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                             placeholder="John Doe" required>
                     </div>
                     <div>
@@ -34,14 +34,14 @@
                     <div>
                         <label for="s-pass" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
                             password</label>
-                        <input type="password" autocomplete="new-password" id="s-pass" name="s-pass" placeholder="••••••••"
+                        <input type="password" minlength="8" autocomplete="new-password" id="s-pass" name="s-pass" placeholder="••••••••"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                             required>
                     </div>
                     <div>
                         <label for="s-cpass" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirm
                             password</label>
-                        <input type="password" autocomplete="new-password" id="s-cpass" name="s-cpass" placeholder="••••••••"
+                        <input type="password" minlength="8" autocomplete="new-password" id="s-cpass" name="s-cpass" placeholder="••••••••"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                             required>
                     </div>
