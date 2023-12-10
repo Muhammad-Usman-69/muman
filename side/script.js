@@ -98,3 +98,93 @@ if (document.querySelector(".form")) {
         })
     })
 }
+
+if (document.querySelector(".prod-cart")) {
+    let quantities = document.querySelectorAll(".product-quantity");
+    let plusAll = document.querySelectorAll(".plus");
+    let minusAll = document.querySelectorAll(".minus");
+    let items = document.querySelectorAll(".item");
+    let prices = document.querySelectorAll(".price");
+    let selectBtn = document.querySelectorAll(".select");
+    let selectAll = document.querySelector(".selectAll");
+    let totalItem = document.querySelectorAll(".totalItem");
+    let totalPriceBf = document.querySelector(".totalPrice");
+    let finalPrice = document.querySelector(".finalPrice");
+    let deliveryCharge = document.querySelectorAll(".deliveryPrice");
+    let totalDelivery = document.querySelector(".delivery");
+
+    selectBtn.forEach((btn, index) => {
+        let quantity = quantities[index];
+        let minus = minusAll[index];
+        let plus = plusAll[index];
+
+        plus.addEventListener("click", () => {
+            quantity.innerHTML++;
+            updateTotal();
+        });
+
+        minus.addEventListener("click", () => {
+            if (quantity.innerHTML > 1) {
+                quantity.innerHTML--;
+                updateTotal();
+            }
+        });
+
+        btn.addEventListener("input", () => {
+            updateTotal();
+        });
+    });
+
+    function updateTotal() {
+        let totalQuantity = 0;
+        let totalPrice = 0;
+        let oneChecked = false;
+        let totalDel = 0;
+
+        selectBtn.forEach((btn, index) => {
+            let quantity = quantities[index];
+            let price = Number(prices[index].innerHTML);
+            let delPrice = Number(deliveryCharge[index].innerHTML);
+
+            if (btn.checked) {
+                totalQuantity += Number(quantity.innerHTML);
+                totalPrice += price * Number(quantity.innerHTML);
+                totalDel += Number(delPrice) * Number(quantity.innerHTML);
+
+                oneChecked = true;
+            }
+
+            setTimeout(() => {
+                if (btn.checked == false) {
+                    selectAll.checked = false;
+                }
+            }, 1);
+        });
+
+        totalItem.forEach((total) => {
+            total.innerHTML = totalQuantity;
+        });
+
+        totalPriceBf.innerHTML = (totalPrice).toFixed(2);
+
+        if (oneChecked) {
+            totalDelivery.innerHTML = totalDel.toFixed(2);
+            finalPrice.innerHTML = (totalPrice + totalDel).toFixed(2);
+        } else {
+            finalPrice.innerHTML = "0.00";
+            totalDelivery.innerHTML = "0.00";
+        }
+    }
+
+    function selectAll() {
+        selectBtn.forEach((btn) => {
+            if (selectAll.checked == true) {
+                btn.checked = true;
+                updateTotal();
+            } else {
+                btn.checked = false;
+                updateTotal();
+            }
+        })
+    }
+}

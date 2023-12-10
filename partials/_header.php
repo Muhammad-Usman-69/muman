@@ -23,25 +23,33 @@
         <button>
             <img src="images/main/search.png" alt="" class="bg-blue-100 h-10 p-2 rounded-r-md active:bg-blue-200">
         </button>
-        <a href="side/cart.html" class="w-12 ml-6 p-2 bg-blue-600 rounded-full md:hover:bg-blue-700">
-            <img src="images/main/cart.png" alt="" class="cart invert">
+        <a href="cart.php" class="w-12 ml-6 p-2 bg-blue-600 rounded-full md:hover:bg-blue-700">
+            <img src="images/main/cart.png" alt="" class="invert">
         </a>
     </form>
-    <div onclick="showUser()" class="top-1/2 translate-y-[-50%] right-4 absolute rounded-full z-10">
-        <img src="images/main/account.png"
+    <div class="top-1/2 translate-y-[-50%] right-4 absolute rounded-full z-10">
+        <img onclick="showUser()" src="images/main/account.png"
             class="cursor-pointer w-10 bg-[#f7941c] hover:bg-[#ff8f10e5] active:bg-[#f7941c] rounded-full">
         <div
-            class="user hidden transition-all ease-in-out duration-300 absolute right-0 top-14 bg-[#0c3880] p-2 rounded-md">
+            class="user hidden absolute right-0 top-14 bg-[#0c3880] p-2 rounded-md">
             <span
                 class="border-[transparent_transparent_#0c3880_transparent] border-[10px] content-[0] border-solid absolute -top-5 right-3"></span>
-            <div class="space-y-2 w-48 flex flex-col z-20 whitespace-nowrap overflow-hidden">
+            <div class="space-y-2 w-48 flex flex-col z-20">
                 <?php
                 if (isset($_SESSION["log"]) && $_SESSION["log"] == true) {
-                    echo '<button
+                    echo '<div class="px-2 py-1.5 text-sm text-white">
+                    <p>' . $_SESSION["name"] . '</p>
+                    <p class="font-medium truncate">' . $_SESSION["email"] . '</p>
+                        </div>
+                    <div class="h-[0.1px] border-t border-[#e5e7eb]"></div>
+                    <button
                         class="border-blue-500 border py-2 bg-slate-50 text-[#0c3880] rounded-md hover:bg-slate-100 active:bg-slate-200 font-semibold">View
-                        Profile</button>
+                        Orders</button>
+                    <button
+                        class="border-blue-500 border py-2 bg-slate-50 text-[#0c3880] rounded-md hover:bg-slate-100 active:bg-slate-200 font-semibold">Settings</button>
+                    <div class="h-[0.1px] border-t border-[#e5e7eb]"></div>
                     <button 
-                    data-modal-target="logout-modal" data-modal-toggle="logout-modal" class="border-blue-500 border py-2 bg-slate-50 text-[#0c3880] rounded-md hover:bg-slate-100 active:bg-slate-200 font-semibold">Log
+                        data-modal-target="logout-modal" data-modal-toggle="logout-modal" class="border-blue-500 border py-2 bg-slate-50 text-[#0c3880] rounded-md hover:bg-slate-100 active:bg-slate-200 font-semibold">Log
                         out</button>';
                 } else {
                     echo '<button data-modal-target="log-modal"         data-modal-toggle="log-modal" class="border-blue-500 border py-2 bg-slate-50 text-[#0c3880] rounded-md hover:bg-slate-100 active:bg-slate-200 font-semibold">Log in</button>

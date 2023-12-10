@@ -10,11 +10,11 @@
             $result = mysqli_query($conn, $sql);
             $num = mysqli_num_rows($result);
         } else {
-            header("location:/?unknown category");
+            header("location:/?error=unknown category");
             exit();
         }
     } else {
-        header("location:/?category not specified");
+        header("location:/?error=category not specified");
         exit();
     }
 ?>
@@ -70,6 +70,7 @@
     </div>
 
     <?php include("partials/_footer.php"); ?>
+    <?php include("partials/_script.php") ?>
 
 </body>
 

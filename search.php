@@ -6,7 +6,7 @@
         $result = mysqli_query($conn, $sql);
         $num = mysqli_num_rows($result);
     } else {
-        header("location:/?alert=nothing to search");
+        header("location:/?error=nothing to search");
         exit();
     }
 ?>
@@ -17,6 +17,7 @@
     <meta charset="UTF-8">
     <meta name="author" content="Muhammad Usman">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>
         <?php echo $query . " - "; if ($num > 1) {echo $num . " items found";} else {echo $num . " item found";} ?>
     </title>
@@ -65,6 +66,7 @@
     </div>
 
     <?php include("partials/_footer.php"); ?>
+    <?php include("partials/_script.php") ?>
 
     </body>
 </html>

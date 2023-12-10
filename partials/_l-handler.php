@@ -18,6 +18,7 @@
                     session_start();
                     $_SESSION["log"] = true;
                     $_SESSION["name"] = $name;
+                    $_SESSION["email"] = $email;
                     $_SESSION["muman_id"] = $muman_id;
                     header("location: /?alert=You are logged in");
                     exit(); 

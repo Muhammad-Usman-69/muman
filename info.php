@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="author" content="Muhammad Usman">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>muman - Search All Products</title>
+    <title>muman - Information</title>
     <link rel="shortcut icon" href="images/main/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="side/style.css">
     
 </head>
 
 <body class="bg-[#f5f4f4] hide-scrollbar flex flex-col">
-    <?php include("partials/_header.php");?>
+    <?php include("partials/_header.php"); ?>
     <?php 
         if (isset($_GET["t"]) && $_GET["t"] != "") {
             $type = $_GET["t"];
@@ -23,14 +23,14 @@
             } else if ($type == "faq") {
                 include("partials/_faq.php");
             } else {
-                header("location:/?unknown info");
+                header("location: /?error=Unknown info");
             }
         } else {
-            header("location:/?info not specified");
+            header("location: /?error=Info not specified");
         }
     ?>
     <?php include("partials/_footer.php"); ?>
-    <?php include("partials/_script.php") ?>
+    <?php include("partials/_script.php"); ?>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
-<?php include("partials/_dbconnect.php"); ?>
 <?php
+    include("partials/_dbconnect.php");
     $sql = "SELECT * FROM `products`";
     $result = mysqli_query($conn, $sql);
     $num = mysqli_num_rows($result);
@@ -47,5 +47,6 @@
         </div>
     </div>
     <?php include("partials/_footer.php"); ?>
+    <?php include("partials/_script.php") ?>
     </body>
 </html>

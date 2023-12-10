@@ -1,9 +1,9 @@
-<?php include("partials/_dbconnect.php") ?>
 <?php
+    include("partials/_dbconnect.php");
     if (isset($_GET["msin"]) && $_GET["msin"] != "") {
         $prod_msin = $_GET["msin"];
     } else {
-        header("location:/?product not specified");
+        header("location:/?error=product not specified");
         exit();
     }
 ?>
@@ -24,7 +24,7 @@
             $prod_del_price = $row["product_delivery_charges"];
         }
     } else {
-        header("location:/?unknown product");
+        header("location:/?error=unknown product");
         exit();
     }
 ?>
@@ -287,7 +287,6 @@
     </div>
 
     <?php include("partials/_footer.php"); ?>
-
     <?php include("partials/_script.php") ?>
 </body>
 

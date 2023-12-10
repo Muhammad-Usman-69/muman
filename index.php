@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>muman - E-commerce Store</title>
     <link rel="shortcut icon" href="images/main/favicon.ico" type="image/x-icon">
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="side/style.css">
 </head>
 
@@ -15,13 +14,6 @@
 
     <?php include("partials/_header.php"); ?>
     <?php include("partials/_dbconnect.php"); ?>
-    <?php 
-        $l = false;
-        if ($l == false) {
-            include("partials/_l-modal.php");
-            include("partials/_s-modal.php");
-        }
-    ?>
 
     <div class="mt-14 md:mt-0">
     <?php 
