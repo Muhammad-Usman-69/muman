@@ -1,5 +1,6 @@
 <?php include("partials/_dbconnect.php"); ?>
 <?php
+    session_start();
     if (isset($_GET["q"]) && $_GET["q"] != "") {
         $query = $_GET["q"];
         $sql = "SELECT * FROM `products` WHERE MATCH(`product_name`, `product_category`, `product_color`, `product_brand`) AGAINST('$query')";
@@ -26,7 +27,7 @@
     
 </head>
 
-<body class="bg-[#f5f4f4] hide-scrollbar flex flex-col">
+<body class="bg-[#f5f4f4] hide-scrollbar flex flex-col min-h-[100vh]">
     
     <?php include("partials/_header.php"); ?>
 

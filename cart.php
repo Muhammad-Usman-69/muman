@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     include("partials/_dbconnect.php");
     if (isset($_SESSION["log"]) && $_SESSION["log"] == true) {
         //check if user has product in cart
@@ -33,7 +34,7 @@
     <link rel="shortcut icon" href="images/main/favicon.ico" type="image/x-icon">
 </head>
 
-<body class="bg-[#f5f4f4] hide-scrollbar">
+<body class="bg-[#f5f4f4] hide-scrollbar flex flex-col min-h-[100vh]">
     <?php include("partials/_header.php"); ?>
     <div class="mt-14 md:mt-0 md:mb-4">
         <h2 class="prod-cart text-3xl text-center py-8">Your Cart</h2>
@@ -41,7 +42,7 @@
             <form class="space-y-4 col-span-2" action="partials/_cd-handler.php" method="post">
                 <div class="flex justify-between h-10 bg-white mx-4 px-4 py-2 border-black border ">
                     <div class="flex space-x-4 items-center">
-                        <input type="checkbox" onclick="selectAll()" class="selectAll">
+                        <input type="checkbox" onclick="selectAllProd()" class="selectAll">
                         <p>SELECT ALL</p>
                     </div>
                     <?php
@@ -81,11 +82,11 @@
                                                 <p class="text-sm font-medium">Delivery: $<span class="deliveryPrice">' . $prod_del_price . '</span></p>
                                             </div>
                                             <div class="quantity flex items-center space-x-2 py-2 text-white">
-                                                <span
-                                                    class="minus cursor-pointer select-none bg-slate-600 w-8 h-8 hover:bg-slate-700 active:bg-slate-800 text-xl flex justify-center">&minus;</span>
+                                                <button type="button"
+                                                    class="minus bg-slate-600 w-8 h-8 hover:bg-slate-700 active:bg-slate-800 text-xl flex justify-center">&minus;</button>
                                                 <p class="product-quantity text-black">1</p>
-                                                <span
-                                                    class="plus cursor-pointer select-none bg-slate-600 w-8 h-8 hover:bg-slate-700 active:bg-slate-800 text-xl flex justify-center">&plus;</span>
+                                                <button type="button"
+                                                    class="plus bg-slate-600 w-8 h-8 hover:bg-slate-700 active:bg-slate-800 text-xl flex justify-center">&plus;</button>
                                             </div>
                                         </div>
                                     </div>

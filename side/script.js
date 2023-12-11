@@ -176,7 +176,7 @@ if (document.querySelector(".prod-cart")) {
         }
     }
 
-    function selectAll() {
+    function selectAllProd() {
         selectBtn.forEach((btn) => {
             if (selectAll.checked == true) {
                 btn.checked = true;

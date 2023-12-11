@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include("partials/_dbconnect.php");
     if (isset($_GET["msin"]) && $_GET["msin"] != "") {
         $prod_msin = $_GET["msin"];
@@ -42,7 +43,7 @@
     <link rel="stylesheet" href="side/style.css">
 </head>
 
-<body class="bg-[#e8e8e8] hide-scrollbar">
+<body class="bg-[#e8e8e8] hide-scrollbar flex flex-col min-h-[100vh]">
 
     <?php include("partials/_header.php"); ?>
 

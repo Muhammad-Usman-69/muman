@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
@@ -8,10 +9,9 @@
     <title>muman - Information</title>
     <link rel="shortcut icon" href="images/main/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="side/style.css">
-    
 </head>
 
-<body class="bg-[#f5f4f4] hide-scrollbar flex flex-col">
+<body class="bg-[#f5f4f4] hide-scrollbar flex flex-col min-h-[100vh]">
     <?php include("partials/_header.php"); ?>
     <?php 
         if (isset($_GET["t"]) && $_GET["t"] != "") {
@@ -23,10 +23,10 @@
             } else if ($type == "faq") {
                 include("partials/_faq.php");
             } else {
-                header("location: /?error=Unknown info");
+                echo "<script> window.location.href='/?error=Unknown info'; </script>";
             }
         } else {
-            header("location: /?error=Info not specified");
+            echo "<script> window.location.href='/?error=Info not specified'; </script>";
         }
     ?>
     <?php include("partials/_footer.php"); ?>

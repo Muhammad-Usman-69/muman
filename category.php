@@ -1,5 +1,6 @@
 <?php include("partials/_dbconnect.php"); ?>
 <?php
+    session_start();
     if (isset($_GET["c"]) && $_GET["c"] != "") {
         $cat_name = $_GET["c"];
         $sql = "SELECT * FROM `categories` WHERE `category_name` = '$cat_name'";
@@ -33,7 +34,7 @@
     
 </head>
 
-<body class="bg-[#f5f4f4] hide-scrollbar flex flex-col">
+<body class="bg-[#f5f4f4] hide-scrollbar flex flex-col min-h-[100vh]">
 
     <?php include("partials/_header.php"); ?>
 

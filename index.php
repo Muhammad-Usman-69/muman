@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
@@ -10,7 +11,7 @@
     <link rel="stylesheet" href="side/style.css">
 </head>
 
-<body class="bg-[#f5f4f4] hide-scrollbar">
+<body class="bg-[#f5f4f4] hide-scrollbar flex flex-col min-h-[100vh]">
 
     <?php include("partials/_header.php"); ?>
     <?php include("partials/_dbconnect.php"); ?>

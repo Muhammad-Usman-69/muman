@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <nav class="flex h-[72px] bg-blue-500 text-sm relative">
     <a href="/" class="logo w-[72px] grid place-items-center cursor-pointer">
         <img class="w-[70px] h-14" src="images/main/logo.png" alt="">
@@ -23,15 +22,29 @@
         <button>
             <img src="images/main/search.png" alt="" class="bg-blue-100 h-10 p-2 rounded-r-md active:bg-blue-200">
         </button>
-        <a href="cart.php" class="w-12 ml-6 p-2 bg-blue-600 rounded-full md:hover:bg-blue-700">
+        <?php
+        if (isset($_SESSION["log"]) && $_SESSION["log"] == true) {
+            include("partials/_dbconnect.php");
+            $muman_id = $_SESSION["muman_id"];
+            $sql = "SELECT * FROM `cart` WHERE `muman_id` = ?";
+            $stmt = mysqli_prepare($conn, $sql);
+            mysqli_stmt_bind_param($stmt, "i", $muman_id);
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+            $num = mysqli_num_rows($result);
+            echo '<a href="cart.php" class="w-12 ml-6 p-2 pr-3 bg-blue-600 rounded-full md:hover:bg-blue-700 relative">
             <img src="images/main/cart.png" alt="" class="invert">
-        </a>
+            <span class="text-xs absolute top-4 right-[4px] text-white p-1">' . $num . '</span></a>';
+        } else {
+            echo '<a href="cart.php" class="w-12 ml-6 p-2 bg-blue-600 rounded-full md:hover:bg-blue-700 relative">
+            <img src="images/main/cart.png" alt="" class="invert"></a>';
+        }
+        ?>
     </form>
     <div class="top-1/2 translate-y-[-50%] right-4 absolute rounded-full z-10">
         <img onclick="showUser()" src="images/main/account.png"
             class="cursor-pointer w-10 bg-[#f7941c] hover:bg-[#ff8f10e5] active:bg-[#f7941c] rounded-full">
-        <div
-            class="user hidden absolute right-0 top-14 bg-[#0c3880] p-2 rounded-md">
+        <div class="user hidden absolute right-0 top-14 bg-[#0c3880] p-2 rounded-md">
             <span
                 class="border-[transparent_transparent_#0c3880_transparent] border-[10px] content-[0] border-solid absolute -top-5 right-3"></span>
             <div class="space-y-2 w-48 flex flex-col z-20">
