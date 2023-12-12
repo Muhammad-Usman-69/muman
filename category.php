@@ -30,7 +30,7 @@
         <?php echo $cat_name; ?> - category
     </title>
     <link rel="shortcut icon" href="images/main/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="side/style.css">
+    <link rel="stylesheet" href="side/input.css">
     
 </head>
 

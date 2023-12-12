@@ -40,7 +40,7 @@
         <?php echo $prod_name; ?>
     </title>
     <link rel="shortcut icon" href="images/main/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="side/style.css">
+    <link rel="stylesheet" href="">
 </head>
 
 <body class="bg-[#e8e8e8] hide-scrollbar flex flex-col min-h-[100vh]">
@@ -119,7 +119,13 @@
             </div>
             <div class="buy grid grid-cols-2 space-x-1 pb-3">
                 <button class="bg-cyan-400 text-white active:bg-cyan-500 p-4 font-semibold">Buy Now</button>
-                <button class="bg-red-600 text-white active:bg-red-700 p-4 font-semibold">Add to Cart</button>
+                <button <?php 
+                    if (isset($_SESSION["log"]) && $_SESSION["log"] == true) {
+                        echo 'onclick="window.open(`partials/_ca-handler.php?msin=' . $prod_msin . '`, `_self`);"';
+                    } else {
+                        echo 'data-modal-target="log-modal" data-modal-toggle="log-modal"';
+                    }
+                ?> class="bg-red-600 text-white active:bg-red-700 p-4 font-semibold">Add to Cart</button>
             </div>
         </div>
         <div

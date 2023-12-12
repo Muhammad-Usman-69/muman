@@ -1,9 +1,9 @@
 <?php 
-    include("_dbconnect.php");
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email = $_POST["l-email"];
         $pass = $_POST["l-pass"];
         if ($email != "" && $pass != "") {
+            include("_dbconnect.php");
             $sql = "SELECT * FROM `users` WHERE `user_email` = ?";
             $stmt = mysqli_prepare($conn, $sql);
             mysqli_stmt_bind_param($stmt, "s", $email);

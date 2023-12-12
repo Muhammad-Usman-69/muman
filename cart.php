@@ -30,7 +30,7 @@
             }
         ?>
     </title>
-    <link rel="stylesheet" href="side/style.css">
+    <link rel="stylesheet" href="">
     <link rel="shortcut icon" href="images/main/favicon.ico" type="image/x-icon">
 </head>
 
@@ -57,8 +57,8 @@
                     if ($num != 0) {
                         while ($row = mysqli_fetch_assoc($result)) {
                             //check for avaialable products
-                            $prod_msin = $row["product_msin"];
-                            $cart_id = $row["cart_product_id"];
+                            $prod_msin = $row["msin"];
+                            $cart_id = $row["cart_id"];
                             $sql = "SELECT * FROM `products` WHERE `product_msin` = ?";
                             $stmt = mysqli_prepare($conn, $sql);
                             mysqli_stmt_bind_param($stmt, "i", $prod_msin);

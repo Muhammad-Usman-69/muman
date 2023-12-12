@@ -30,11 +30,11 @@
             $stmt = mysqli_prepare($conn, $sql);
             mysqli_stmt_bind_param($stmt, "i", $muman_id);
             mysqli_stmt_execute($stmt);
-            $result = mysqli_stmt_get_result($stmt);
-            $num = mysqli_num_rows($result);
+            $result_cart = mysqli_stmt_get_result($stmt);
+            $num_cart = mysqli_num_rows($result_cart);
             echo '<a href="cart.php" class="w-12 ml-6 p-2 pr-3 bg-blue-600 rounded-full md:hover:bg-blue-700 relative">
             <img src="images/main/cart.png" alt="" class="invert">
-            <span class="text-xs absolute top-4 right-[4px] text-white p-1">' . $num . '</span></a>';
+            <span class="text-xs absolute top-4 right-[4px] text-white p-1">' . $num_cart . '</span></a>';
         } else {
             echo '<a href="cart.php" class="w-12 ml-6 p-2 bg-blue-600 rounded-full md:hover:bg-blue-700 relative">
             <img src="images/main/cart.png" alt="" class="invert"></a>';

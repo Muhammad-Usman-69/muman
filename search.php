@@ -23,7 +23,7 @@
         <?php echo $query . " - "; if ($num > 1) {echo $num . " items found";} else {echo $num . " item found";} ?>
     </title>
     <link rel="shortcut icon" href="images/main/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="side/style.css">
+    <link rel="stylesheet" href="">
     
 </head>
 
