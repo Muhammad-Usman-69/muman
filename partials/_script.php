@@ -1,3 +1,3 @@
+<link rel="stylesheet" href="side/style.css">
 <script src="side/script.js"></script>
-<script src="node_modules/flowbite/dist/flowbite.min.js"></script>
-<link rel="stylesheet" href="dist/output.css">
+<script src="side/flowbite.js"></script>

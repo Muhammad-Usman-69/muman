@@ -40,7 +40,7 @@
         <?php echo $prod_name; ?>
     </title>
     <link rel="shortcut icon" href="images/main/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="">
+    
 </head>
 
 <body class="bg-[#e8e8e8] hide-scrollbar flex flex-col min-h-[100vh]">

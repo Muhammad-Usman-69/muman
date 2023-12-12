@@ -55,12 +55,6 @@
                     <p class="font-medium truncate">' . $_SESSION["email"] . '</p>
                         </div>
                     <div class="h-[0.1px] border-t border-[#e5e7eb]"></div>
-                    <button
-                        class="border-blue-500 border py-2 bg-slate-50 text-[#0c3880] rounded-md hover:bg-slate-100 active:bg-slate-200 font-semibold">View
-                        Orders</button>
-                    <button
-                        class="border-blue-500 border py-2 bg-slate-50 text-[#0c3880] rounded-md hover:bg-slate-100 active:bg-slate-200 font-semibold">Settings</button>
-                    <div class="h-[0.1px] border-t border-[#e5e7eb]"></div>
                     <button 
                         data-modal-target="logout-modal" data-modal-toggle="logout-modal" class="border-blue-500 border py-2 bg-slate-50 text-[#0c3880] rounded-md hover:bg-slate-100 active:bg-slate-200 font-semibold">Log
                         out</button>';

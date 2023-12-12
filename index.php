@@ -67,7 +67,7 @@
                 class="group absolute bg-[grey] active:bg-opacity-30 bg-opacity-0 w-20 h-full top-1/2 left-0 -translate-y-1/2 grid place-items-center hover:bg-opacity-20 transition-all duration-300" onclick="scrollImgLeft()">
                 <img src="images/main/left.png" class="hidden group-hover:block" alt="Scroll Icon">
             </button>
-            <div class="rounded-t-xl flex overflow-x-scroll banner scroll-smooth hide-scrollbar">
+            <div class="rounded-t-xl flex overflow-x-scroll lg:w-[1000px] banner scroll-smooth hide-scrollbar">
                 <img class="flex-shrink-0 h-full" src="images/main/banner1.jpg" alt="">
                 <img class="flex-shrink-0 h-full" src="images/main/banner2.jpg" alt="">
                 <img class="flex-shrink-0 h-full" src="images/main/banner3.jpg" alt="">

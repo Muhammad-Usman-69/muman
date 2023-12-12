@@ -30,7 +30,6 @@
             }
         ?>
     </title>
-    <link rel="stylesheet" href="">
     <link rel="shortcut icon" href="images/main/favicon.ico" type="image/x-icon">
 </head>
 
